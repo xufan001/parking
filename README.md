@@ -2,7 +2,7 @@
 
 #### 介绍
 
-基于 SpringBoot + Vue 的智能停车场项目
+基于 SpringBoot + Layui 的智能停车场项目
 
 #### 基础环境
 
@@ -40,5 +40,5 @@ JDK1.8、Maven、Mysql、IntelliJ IDEA、payCloud
 
 - 配置完成，运行`Application`中的 `main `方法。
 
-- 测试账号：admin 密码：admin 
-
+- 超级管理员账号：admin 密码：admin 
+- 收费员账号：xiaoli 密码：xiaoli123456
