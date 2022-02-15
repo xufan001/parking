@@ -92,9 +92,11 @@ public class SysInterfaceServiceImpl implements SysInterfaceService {
             }else{
                 return Result.error("接口已被禁用");
             }
-        }else{
-            return Result.error("接口类型不存在");
         }
+//        else{
+//            return Result.error("接口类型不存在");
+//        }
+        return Result.ok();
     }
 
     public String common(SysInterface entity){

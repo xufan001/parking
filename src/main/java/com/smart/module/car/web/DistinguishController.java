@@ -50,7 +50,7 @@ public class DistinguishController {
     private CarParkingRecordService carParkingRecordService;
 
     /**
-     * 演示上传
+     * 车辆照片上传
      */
     @RequestMapping("upload")
     public Result upload(MultipartFile file,Long id) {
@@ -86,6 +86,7 @@ public class DistinguishController {
                 if(record!=null){
                     record.setCost(CostUtils.calculate(record,carParkManage));
                     record.setGmtOut(DateUtils.getTimestamp());
+                    carParkManage.setParkingResidueNumber(carParkManage.getParkingResidueNumber()+1);
                     map.put("msg","出厂成功");
                 }else{
                     record = new CarParkingRecord();
@@ -102,9 +103,11 @@ public class DistinguishController {
                     }else{
                         record.setType(SystemConstant.CAR_TYPE_TEMP);
                     }
+                    carParkManage.setParkingResidueNumber(carParkManage.getParkingResidueNumber()-1);
                     map.put("msg","进厂成功");
                 }
                 carParkingRecordService.save(record);
+                parkManageRepository.save(carParkManage);
                 return Result.ok(map);
             }else{
                 return Result.error();

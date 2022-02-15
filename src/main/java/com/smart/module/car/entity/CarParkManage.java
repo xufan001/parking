@@ -56,6 +56,12 @@ public class CarParkManage extends PageBean implements Serializable{
     private Integer parkingSpaceNumber;
 
     /**
+     * 剩余车位数量
+     */
+    @Column(name = "parking_residue_number")
+    private Integer parkingResidueNumber;
+
+    /**
      * 免费时长
      */
     @Column(name = "free_time")

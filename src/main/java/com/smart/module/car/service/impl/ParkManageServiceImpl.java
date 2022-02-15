@@ -36,6 +36,7 @@ public class ParkManageServiceImpl implements ParkManageService {
         }else{
             entity.setGmtModified(DateUtils.getTimestamp());
         }
+        entity.setParkingResidueNumber(entity.getParkingSpaceNumber());
         parkManageRepository.saveAndFlush(entity);
         return Result.ok("保存成功");
     }
